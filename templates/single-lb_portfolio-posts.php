@@ -19,7 +19,10 @@
 		<div class="entry">
 			<?php the_content() ?>
 		</div><!--.entry-->
-	</article><!-- finish enclosing post-->  
+	</article><!-- finish enclosing post-->
+	<footer>
+		<?php the_terms( $post->ID, 'portfolio_categories', 'categories: ', ' / ' ); ?>
+	</footer> 
 
 <?php endwhile; else :?>
    
