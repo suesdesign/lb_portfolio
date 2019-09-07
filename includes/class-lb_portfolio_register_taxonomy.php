@@ -8,7 +8,7 @@
  * Register the taxnomoy
  */
 
-class Lb_portfolio_register_taxonomy
+class Lb_Portfolio_Register_Taxonomy
 {
     protected $lb_portfolio = 'lb_portfolio';
     protected $args;
@@ -58,4 +58,4 @@ class Lb_portfolio_register_taxonomy
 }
 
 
-new Lb_portfolio_register_taxonomy();
+new Lb_Portfolio_Register_Taxonomy();

@@ -8,7 +8,7 @@
  * Register the custom post
  */
 
-class Lb_portfolio_register_posts
+class Lb_Portfolio_Register_Posts
 {
     protected $lb_portfolio = 'lb_portfolio';
     protected $args;
@@ -43,9 +43,10 @@ class Lb_portfolio_register_posts
         $this->args = array(
             'labels' => $this->labels,
             'public' => true,
-            'has archive' => true,
+            'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+            'has_archive' => true,
             'show_in_rest' => true,
-            'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt' )
+            'rewrite' => array( 'slug' => 'lb_portfolio' )
         );
         
         register_post_type( $this->lb_portfolio, $this->args );
@@ -61,4 +62,4 @@ class Lb_portfolio_register_posts
     }
 }
 
-new Lb_portfolio_register_posts();
+new Lb_Portfolio_Register_Posts();

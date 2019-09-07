@@ -2,11 +2,6 @@
 /*
 *** LB Portfolio 1.0 ***
 */
-
-/*
-*** Template name: Portfolio
-*/
-
 ?>
 
 <?php 

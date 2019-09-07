@@ -30,6 +30,7 @@ if( ! defined('ABSPATH') ) {
 require plugin_dir_path( __FILE__ ) . 'includes/class-lb_portfolio_register_posts.php';
 require plugin_dir_path( __FILE__ ) . 'includes/class-lb_portfolio_templates.php';
 require plugin_dir_path( __FILE__ ) . 'includes/class-lb_portfolio_register_taxonomy.php';
+require plugin_dir_path( __FILE__ ) . 'includes/class-lb_portfolio_widget.php';
 
 
 
