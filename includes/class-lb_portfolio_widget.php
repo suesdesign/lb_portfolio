@@ -25,43 +25,24 @@ class Lb_Portfolio_Widget extends WP_Widget {
 	 *
 	 * @param array $args     Widget arguments.
 	 * @param array $instance Saved values from database.
+	 * @param array $widget_args Arguments for the widget content on front end
 	 */
 	public function widget( $args, $instance ) {
 		echo $args['before_widget'];
 		if ( ! empty( $instance['title'] ) ) {
 			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
 		}
-		//echo esc_html__( 'Hello, World!', 'lb_portfolio' );
-		// Start Widget output
-		//global $post;
-		//while ( have_posts() ) : the_post();
-		//$terms = get_the_term_list( $post->ID, 'portfolio_categories', '<ul class="portfolio_categories"><li>', ',</li><li>', '</li></ul>' );
-		/*$terms = get_the_terms( get_the_ID(), 'portfolio_categories' );
-		echo 'ul class="project-themes no-bullet"';
-     	foreach($terms as $term) {
-        echo '<li class="lb_portfolio_category">'
-			. '<a href="'
-			. get_term_link( $term->term_id )
-			. '"'
-			.  $term->slug
-			. '</a></li>';
-		 }
-		 echo '</ul>';*/
-		 $widget_args = array( 
+
+		// Widget front end content
+		$widget_args = array( 
 			'taxonomy' => 'portfolio_categories',
 			'title_li' => ''
-			);
-			 
-			// We wrap it in unordered list 
-			echo '<ul>'; 
-			echo wp_list_categories($widget_args);
-			echo '</ul>';
+		);
 			
-
-		//endwhile;
-		//echo $terms;
-		//var_dump($terms);
-		// End Widget output
+		// Wrap taxonomies list in an unordered list 
+		echo '<ul>'; 
+		echo wp_list_categories($widget_args);
+		echo '</ul>';
 		echo $args['after_widget'];
 	}
 
@@ -103,12 +84,6 @@ class Lb_Portfolio_Widget extends WP_Widget {
 		register_widget( 'Lb_Portfolio_Widget' );
 	}
 
-} // class Foo_Widget
-
-// register Foo_Widget widget
-/*function register_portfolio_widget() {
-    register_widget( 'Lb_Portfolio_Widget' );
 }
-add_action( 'widgets_init', 'register_foo_widget' );*/
 
 new Lb_Portfolio_Widget();

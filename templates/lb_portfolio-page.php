@@ -26,9 +26,8 @@
 	<?php if ( have_posts () ) : ?>
 
 		<?php  $args = array(
-			'posts_per_page' => '9',
+			'posts_per_page' => '-1',
 			'post_type' => 'lb_portfolio',
-			'paged' => get_query_var('paged') ? get_query_var('paged') : 1
 		);?>
 
 		<?php $lb_portfolio = new WP_Query ( $args );
