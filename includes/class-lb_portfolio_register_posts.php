@@ -27,7 +27,7 @@ class Lb_Portfolio_Register_Posts
     public function register_post_type() {
         
         $this->labels = array( 
-            'name'               => _x( 'Portfolio', 'lb_portfolio' ),
+            'name'               => _x( 'Projects', 'lb_portfolio' ),
             'singular name'      => _x( 'Projects', 'lb_portfolio' ),
             'add_new'            => _x( 'Add new Project', 'lb_portfolio' ),
             'add_new_item'       => __( 'Add new Project', 'lb_portfolio' ),
@@ -46,7 +46,7 @@ class Lb_Portfolio_Register_Posts
             'has_archive' => true,
             'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
             'show_in_rest' => true,
-            'rewrite' => array( 'slug' => 'portfolio' )
+            'rewrite' => array( 'slug' => 'projects' )
         );
         
         register_post_type( $this->lb_portfolio, $this->args );

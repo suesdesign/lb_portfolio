@@ -18,32 +18,20 @@
 		</h1>
 	</header>
 
-	<div id="lb_portfolio">
+	<div id="lb_portfolio_grid">
 
 
 	<?php if ( have_posts () ) : ?>
 
 		<?php while (have_posts()) : the_post(); ?>
-			<article <?php post_class() ?> id="post-<?php the_ID(); ?>" role="article">
-				<header>
-					<h2 class="entry-title">
-						<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>">
-						<?php the_title(); ?></a>
-					</h2>
-				</header>
-				<div class="entry">
-				<?php
-					if ( has_post_thumbnail() ) {
-					the_post_thumbnail('medium');
-					}
-				?>
-				</div><!--.entry-->
-				<footer>
-					<p class="postmetadata">
-						<?php the_terms( $post->ID, 'portfolio_categories', 'Categories: ', ' / ' ); ?>
-					</p><!-- .metadata-->
-				</footer>
-			</article><!-- finish enclosing post-->  
+			<div class="projects_overlay">
+				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+					<?php the_post_thumbnail('medium'); ?>
+				</a>
+				<a class="projects_text" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+					<p class="projects_title"><?php the_title(); ?></p>
+				</a>
+			</div><!--.projects_overlay-->
 		<?php endwhile; else : ?>
 		<?php endif; ?>
 	</div><!--#lb_portfolio-->

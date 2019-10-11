@@ -11,44 +11,33 @@
 
 <main id="maincontent" role="main">
 
-	<header>
-		<h1 class="entry-title">
-			<?php the_title(); ?>
-		</h1>
-	</header>
+	<div id="lb_portfolio_grid">
 
-	<div id="custom-posts-list">
+		<?php
+			$args = array(
+				'post_type' => 'lb_portfolio',
+				'paged' => get_query_var('page') ? get_query_var('page') : 1
+			);
+		?>
 
-	<?php
-		$args = array(
-			'posts_per_page' => '3',
-			'post_type' => 'lb_portfolio',
-			'paged' => get_query_var('page') ? get_query_var('page') : 1
-		);
-	?>
+		<?php $lb_portfolio = new WP_Query ( $args ); ?>
 
-	<?php $lb_portfolio = new WP_Query ( $args ); ?>
+		<?php if ( $lb_portfolio->have_posts () ) : ?>
 
-	<?php if ( $lb_portfolio->have_posts () ) : ?>
-
-	
-
-	<?php while ( $lb_portfolio->have_posts() ) : $lb_portfolio->the_post(); ?>
-
-	<div class="lb_portfolio">
-		
-	<?php if ( has_post_thumbnail() ) :?>
-		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-			<?php the_post_thumbnail('medium'); ?>
-		</a>
-	<?php endif; ?>
-	<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="custom-post-title"><?php the_title(); ?></a>
-
-	</div><!--.suesdesign_custom_post-->
-
-	<?php endwhile; else :?>
-	<?php endif; ?>
-	</div><!--#custom-posts-list-->
+		<?php while ( $lb_portfolio->have_posts() ) : $lb_portfolio->the_post(); ?>
+			<div class="projects_overlay">
+				<div class="projects_background">
+				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+					<?php the_post_thumbnail('medium'); ?>
+				</a>
+				<a class="projects_text" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+					<p class="projects_title"><?php the_title(); ?></p>
+				</a>
+			</div>
+			</div><!--.projects_overlay-->
+		<?php endwhile; else :?>
+		<?php endif; ?>
+	</div><!--#portfolio_grid-->
 
 	<!--bottom navigation to older and newer posts if there is more than one page of posts-->
 	<div class="page-navigation">
