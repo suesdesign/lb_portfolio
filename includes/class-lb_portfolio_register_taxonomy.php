@@ -12,7 +12,7 @@ class Lb_Portfolio_Register_Taxonomy
 {
     protected $lb_portfolio = 'lb_portfolio';
     protected $args;
-    protected $lables;
+    protected $labels;
 
 /**
  * Add action to register the taxonomy
@@ -51,6 +51,7 @@ class Lb_Portfolio_Register_Taxonomy
             'query_var' => true,
             'rewrite' => array( 'slug' => 'portfolio_categories' ),
             'show_in_rest' => true,
+            'exclude_from_search' => false
           ));
         
         register_taxonomy( $this->lb_portfolio, $this->args );

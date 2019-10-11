@@ -18,7 +18,7 @@ class Lb_Portfolio_Templates
     }
     
     public function lb_templates($original_template) {
-        if ( is_page('portfolio') ) {
+        if ( is_page('projects') ) {
             // checks if the file exists in the theme first,
             // otherwise serve the file from the plugin
                 if ( $this->theme_file = locate_template( array ( 'lb_portfolio-page.php' ) ) ) {

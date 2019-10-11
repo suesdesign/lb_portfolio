@@ -5,7 +5,10 @@
 */
 ?>
 
-<?php get_header(); ?>
+<?php 
+	get_header();
+	get_sidebar();
+?>
 
 <main id="maincontent" role="main">
 
@@ -21,7 +24,7 @@
 		</div><!--.entry-->
 	</article><!-- finish enclosing post-->
 	<footer>
-		<?php the_terms( $post->ID, 'portfolio_categories', 'categories: ', ' / ' ); ?>
+		<?php the_terms( $post->ID, 'portfolio_categories', 'Categories: ', ' / ' ); ?>
 	</footer> 
 
 <?php endwhile; else :?>

@@ -12,7 +12,7 @@ class Lb_Portfolio_Register_Posts
 {
     protected $lb_portfolio = 'lb_portfolio';
     protected $args;
-    protected $lables;
+    protected $labels;
 
 /**
  * Add action to register the post type and flush permalinks on plugin activation
@@ -43,10 +43,10 @@ class Lb_Portfolio_Register_Posts
         $this->args = array(
             'labels' => $this->labels,
             'public' => true,
-            'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
             'has_archive' => true,
+            'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
             'show_in_rest' => true,
-            'rewrite' => array( 'slug' => 'lb_portfolio' )
+            'rewrite' => array( 'slug' => 'portfolio' )
         );
         
         register_post_type( $this->lb_portfolio, $this->args );

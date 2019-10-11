@@ -12,7 +12,7 @@ class Lb_Portfolio_Widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'lb_portfolio', // Base ID
-			esc_html__( 'Portfolio Title', 'lb_portfolio' ), // Name
+			esc_html__( 'Portfolio Categories', 'lb_portfolio' ), // Name
 			array( 'description' => esc_html__( 'Portfolio Widget', 'lb_portfolio' ), ) // Args
 		);
 		add_action( 'widgets_init', array( $this, 'register_portfolio_widget' ) );
@@ -36,7 +36,8 @@ class Lb_Portfolio_Widget extends WP_Widget {
 		// Widget front end content
 		$widget_args = array( 
 			'taxonomy' => 'portfolio_categories',
-			'title_li' => ''
+			'title_li' => '',
+			'current_category' => 0
 		);
 			
 		// Wrap taxonomies list in an unordered list 
@@ -44,6 +45,7 @@ class Lb_Portfolio_Widget extends WP_Widget {
 		echo wp_list_categories($widget_args);
 		echo '</ul>';
 		echo $args['after_widget'];
+
 	}
 
 	/**

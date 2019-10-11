@@ -1,16 +1,12 @@
 <?php
 /*
-*** LB Portfolio 1.0 ***
+*** Suesdesign Custom Posts 1.0 ***
 */
-
-/*
-*** Template name: Portfolio
-*/
-
 ?>
 
 <?php 
 	get_header();
+	get_sidebar();
 ?>
 
 <main id="maincontent" role="main">
@@ -21,20 +17,25 @@
 		</h1>
 	</header>
 
-	<div id="lb_portfolio">
+	<div id="custom-posts-list">
 
-	<?php if ( have_posts () ) : ?>
-
-		<?php  $args = array(
-			'posts_per_page' => '-1',
+	<?php
+		$args = array(
+			'posts_per_page' => '3',
 			'post_type' => 'lb_portfolio',
-		);?>
+			'paged' => get_query_var('page') ? get_query_var('page') : 1
+		);
+	?>
 
-		<?php $lb_portfolio = new WP_Query ( $args );
+	<?php $lb_portfolio = new WP_Query ( $args ); ?>
 
-		while ( $lb_portfolio->have_posts() ) : $lb_portfolio->the_post(); ?>
+	<?php if ( $lb_portfolio->have_posts () ) : ?>
 
-	<div class="lb_portfolio_project">
+	
+
+	<?php while ( $lb_portfolio->have_posts() ) : $lb_portfolio->the_post(); ?>
+
+	<div class="lb_portfolio">
 		
 	<?php if ( has_post_thumbnail() ) :?>
 		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
@@ -43,11 +44,31 @@
 	<?php endif; ?>
 	<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="custom-post-title"><?php the_title(); ?></a>
 
-	</div><!--.lb_portfolio_project-->
+	</div><!--.suesdesign_custom_post-->
 
 	<?php endwhile; else :?>
 	<?php endif; ?>
-	</div><!--#lb_portfolio-->
+	</div><!--#custom-posts-list-->
+
+	<!--bottom navigation to older and newer posts if there is more than one page of posts-->
+	<div class="page-navigation">
+		<?php
+		/*
+		** pagination
+		*/
+
+		$big = 999999999; // need an unlikely integer
+
+		echo paginate_links( array(
+			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+			'format' => '?paged=%#%',
+			'current' => max( 1, get_query_var('page') ),
+			'total' => $lb_portfolio->max_num_pages,
+		) );
+		?>
+
+		<?php wp_reset_postdata(); ?>
+	</div><!--.navigation-->
 
 </main>
 
