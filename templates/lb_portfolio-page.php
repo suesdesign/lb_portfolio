@@ -27,13 +27,14 @@
 		<?php while ( $lb_portfolio->have_posts() ) : $lb_portfolio->the_post(); ?>
 			<div class="projects_overlay">
 				<div class="projects_background">
-				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-					<?php the_post_thumbnail('medium'); ?>
-				</a>
-				<a class="projects_text" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-					<p class="projects_title"><?php the_title(); ?></p>
-				</a>
-			</div>
+					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+						<?php the_post_thumbnail('medium'); ?>
+					
+					<div class="projects_text" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+						<p class="projects_title"><?php the_title(); ?></p>
+					</div>
+					</a>
+				</div><!--.projects_background-->
 			</div><!--.projects_overlay-->
 		<?php endwhile; else :?>
 		<?php endif; ?>

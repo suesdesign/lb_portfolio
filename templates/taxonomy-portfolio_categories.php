@@ -12,7 +12,7 @@
 <main id="maincontent" role="main">
 
 	<header>
-		<h1 class="entry-title">
+		<h1 class="taxonomy_title">
 			<?php $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
 			echo $term->name; ?>
 		</h1>
@@ -25,12 +25,15 @@
 
 		<?php while (have_posts()) : the_post(); ?>
 			<div class="projects_overlay">
-				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-					<?php the_post_thumbnail('medium'); ?>
-				</a>
-				<a class="projects_text" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-					<p class="projects_title"><?php the_title(); ?></p>
-				</a>
+				<div class="projects_background">
+					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+						<?php the_post_thumbnail('medium'); ?>
+					
+					<div class="projects_text" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+						<p class="projects_title"><?php the_title(); ?></p>
+					</div>
+					</a>
+				</div><!--.projects_background-->
 			</div><!--.projects_overlay-->
 		<?php endwhile; else : ?>
 		<?php endif; ?>
