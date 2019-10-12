@@ -23,7 +23,7 @@
 			<?php the_content() ?>
 		</div><!--.entry-->
 	</article><!-- finish enclosing post-->
-	<footer>
+	<footer class="portfolio_taxonomies">
 		<?php the_terms( $post->ID, 'portfolio_categories', 'Categories: ', ' / ' ); ?>
 	</footer> 
 
