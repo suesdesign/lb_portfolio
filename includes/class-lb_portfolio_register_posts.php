@@ -29,12 +29,12 @@ class Lb_Portfolio_Register_Posts
         $this->labels = array( 
             'name'               => _x( 'Projects', 'lb_portfolio' ),
             'singular name'      => _x( 'Projects', 'lb_portfolio' ),
-            'add_new'            => _x( 'Add new Project', 'lb_portfolio' ),
-            'add_new_item'       => __( 'Add new Project', 'lb_portfolio' ),
+            'add_new'            => _x( 'Add New Project', 'lb_portfolio' ),
+            'add_new_item'       => __( 'Add New Project', 'lb_portfolio' ),
             'edit_item'          => __( 'Edit Project', 'lb_portfolio' ),
             'new_item'           => __( 'New Project', 'lb_portfolio' ),
             'all_items'          => __( 'All Projects', 'lb_portfolio' ),
-            'view_item'          => __( 'View Projects', 'lb_portfolio' ),
+            'view_item'          => __( 'View Project', 'lb_portfolio' ),
             'search_items'       => __( 'Search Projects', 'lb_portfolio' ),
             'not_found'          => __( 'No Projects', 'lb_portfolio' ),
             'not_found_in_trash' => __( 'No Projects found in trash', 'lb_portfolio' )
