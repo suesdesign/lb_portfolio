@@ -44,7 +44,7 @@ class Lb_Portfolio_Register_Posts
             'labels' => $this->labels,
             'public' => true,
             'has_archive' => true,
-            'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+            'supports' => array( 'title', 'editor', 'thumbnail', 'author', 'excerpt' ),
             'show_in_rest' => true,
             'rewrite' => array( 'slug' => 'projects' )
         );
@@ -57,7 +57,7 @@ class Lb_Portfolio_Register_Posts
  */
 
     function lb_portfolio_flush_rewrites() {
-	    register_post_type();
+        register_post_type();
         flush_rewrite_rules();
     }
 }
