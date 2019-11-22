@@ -1,8 +1,8 @@
 # LB Portfolio
 
-A WordPress plugin for a portfolio using OOP.
+A WordPress plugin for a portfolio using PHP OOP.
 
-The portfolio used WordPress custom posts and taxonomies.
+The portfolio uses WordPress custom posts and taxonomies.
 
 The taxonomies allow the different projects to be put into different categories.
 
