@@ -1,7 +1,9 @@
 <?php
-/*
-*** LB Portfolio 1.0 ***
-*/
+/**
+ * @package LB Portfolio
+ * @version 1.0
+ * Portfolio taxonomy page
+ */
 ?>
 
 <?php 

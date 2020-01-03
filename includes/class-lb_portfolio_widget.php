@@ -1,5 +1,10 @@
 <?php
 /**
+ * @package LB Portfolio
+ * @version 1.0
+ */
+
+/**
  * Adds Portfolio Categories widget.
  */
 class Lb_Portfolio_Widget extends WP_Widget {

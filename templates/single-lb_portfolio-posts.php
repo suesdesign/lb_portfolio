@@ -1,7 +1,8 @@
 <?php
-/*
-*** Suesdesign Custom Posts 1.0 ***
-*   Single Custom Post page
+/**
+ * @package LB Portfolio
+ * @version 1.0
+ *   Single Portfolio Post page
 */
 ?>
 
